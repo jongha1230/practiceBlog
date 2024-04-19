@@ -23,3 +23,5 @@ function toggleMenu(menuId) {
     var selectedSection = document.getElementById(menuId + 'Content');
     selectedSection.style.display = 'block';
 }
+
+

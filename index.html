@@ -19,14 +19,14 @@
         </h1>
         <nav class="header-nav">
             <ul class="header-list">
-                <div>
-                    <li id="home" onclick="toggleMenu('home')">홈</li>
+                <div onclick="toggleMenu('home')">
+                    <li id="home">홈</li>
                 </div>
-                <div>
-                    <li id="list" onclick="toggleMenu('list')">글 목록</li>
+                <div onclick="toggleMenu('write')">
+                    <li id="write">글 쓰기</li>
                 </div>
-                <div>
-                    <li id="guestbook" onclick="toggleMenu('guestbook')">방명록</li>
+                <div onclick="toggleMenu('guestbook')">
+                    <li id="guestbook">방명록</li>
                 </div>
             </ul>
         </nav>
@@ -39,16 +39,38 @@
                     <article class="post-section" id="homeContent">
                         <div class="post-header">
                             <h2>
-                                전체 글
+                                전체 글                                
                                 <!-- 전체 글 갯수 조회 -->
                                 <em></em>
                             </h2>
                         </div>
-                        <!-- 가장 최근에 등록한 글 -->
+
+                        <!-- 가장 최근에 등록한 글목록 -->
+                        <div recent-post-list>
+                            <!-- 클릭 시 모달창으로 화면 표시 -->
+                        </div>
                     </article>
-                    <article class="post-section" id="listContent" style="display:none;">
-                        <!-- 글 목록 컨텐츠 -->
-                        글 목록 예시
+                    <article class="post-section" id="writeContent" style="display:none;">
+                        <!-- 글 목록 컨텐츠 -->    
+                        
+                        <!-- 글 쓰기 폼 -->
+                        <form id="writeForm">
+                            <div id="name-password">
+                                <input type="text" id="name" name="name" placeholder="이름" required>
+                                <input type="password" id="password" name="password" placeholder="비밀번호" required>
+                            </div>                            
+                            <div id="title-content">
+                                <input type="text" id="title" name="title" placeholder="제목" required>
+                                <textarea id="content" name="content" placeholder="내용" required></textarea>
+                            </div>            
+                            <div id="submit-btn">
+                                <button type="submit" class="write-btn">글쓰기</button>
+                            </div>                
+                            
+                        </form>
+                        <!-- 글 쓰기 제출 버튼 -->
+                        
+                        
                     </article>
 
                     <article class="post-section" id="guestbookContent" style="display:none;">
@@ -60,29 +82,16 @@
 
                 <aside class="sidebar">
                     <div class="sidebar-content">
-                        <!-- 카테고리 -->
-                        <nav class="category">
-                            <ul class="total_catagory">
-                                <li>
-                                    <a href="#">분류된 글제목 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">분류된 글제목 2</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="sidebar-content">
                         <!-- 최근글 / 인기글 -->
                         <div class="post-btn">
-                            <h2>
+                            <h2 class="btn-class">
                                 <button id="recent-btn" class="tab-btn" type="button">최근 글</button>
                                 <button id="popular-btn" class="tab-btn" type="button">인기 글</button>
                             </h2>
                         </div>
                         <div id="recent" class="tab-list">
-                            <ul>
-                                <li><!-- 최근 글 1 --></li>
+                            <ul>                                
+                                <li>최근 글 1</li>
                                 <li><!-- 최근 글 2 --></li>
                                 <li><!-- 최근 글 3 --></li>
                                 <li><!-- 최근 글 4 --></li>
