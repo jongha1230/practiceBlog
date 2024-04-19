@@ -6,6 +6,81 @@
     <title>블로그 및 깃 연습용 사이드 프로젝트</title>
 </head>
 <body>
-    
+    <header id="header">
+        <h1>
+            <a href="#">블로그 만들어보기</a>            
+        </h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="">홈</a></li>
+                <li><a href="">글 목록</a></li>
+                <li><a href="">방명록</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post-section">
+            <div class="post-header">
+                <h2>
+                    전체 글
+                    <!-- 전체 글 갯수 조회 -->
+                    <em></em>  
+                </h2>
+            </div>
+
+            <article>
+                <h3>글 제목 1</h3>
+                <p>글 내용 1</p>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <!-- 카테고리 -->
+                <nav class="category">
+                    <ul class="total_catagory">
+                        <li>
+                            <a href="#">분류된 글제목 1</a>
+                        </li>
+                        <li>
+                            <a href="#">분류된 글제목 2</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sidebar-content">
+                <!-- 최근글 / 인기글 -->
+                <div class="post-btn">
+                    <h2>
+                        <button id="recent-btn" class="tab-btn" type="button">최근 글</button>
+                        <button id="popular-btn" class="tab-btn" type="button">인기 글</button>
+                    </h2>                    
+                </div>
+                <div id="recent" class="tab-list">
+                    <ul>
+                        <li><!-- 최근 글 1 --></li>
+                        <li><!-- 최근 글 2 --></li>
+                        <li><!-- 최근 글 3 --></li>
+                        <li><!-- 최근 글 4 --></li>
+                        <li><!-- 최근 글 5 --></li>
+                    </ul>
+                </div>
+                <div id="popular" class="tab-list">
+                    <ul>
+                        <li><a href=""><!-- 인기 글 1 --></a></li>
+                        <li><a href=""><!-- 인기 글 2 --></a></li>
+                        <li><a href=""><!-- 인기 글 3 --></a></li>
+                        <li><a href=""><!-- 인기 글 4 --></a></li>
+                        <li><a href=""><!-- 인기 글 5 --></a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 블로그 및 깃 연습용 사이드 프로젝트</p>
+    </footer>
 </body>
 </html>
