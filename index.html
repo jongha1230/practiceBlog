@@ -1,86 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>블로그 및 깃 연습용 사이드 프로젝트</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+    </style>
 </head>
+
 <body>
     <header id="header">
         <h1>
-            <a href="#">블로그 만들어보기</a>            
+            <a href="#">블로그 만들어보기</a>
         </h1>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="">홈</a></li>
-                <li><a href="">글 목록</a></li>
-                <li><a href="">방명록</a></li>
+        <nav class="header-nav">
+            <ul class="header-list">
+                <div>
+                    <li id="home" onclick="toggleMenu('home')">홈</li>
+                </div>
+                <div>
+                    <li id="list" onclick="toggleMenu('list')">글 목록</li>
+                </div>
+                <div>
+                    <li id="guestbook" onclick="toggleMenu('guestbook')">방명록</li>
+                </div>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="post-section">
-            <div class="post-header">
-                <h2>
-                    전체 글
-                    <!-- 전체 글 갯수 조회 -->
-                    <em></em>  
-                </h2>
-            </div>
+        <section class="container">
+            <div class="content-wrap">
+                <div class="content-list">
+                    <article class="post-section" id="homeContent">
+                        <div class="post-header">
+                            <h2>
+                                전체 글
+                                <!-- 전체 글 갯수 조회 -->
+                                <em></em>
+                            </h2>
+                        </div>
+                        <!-- 가장 최근에 등록한 글 -->
+                    </article>
+                    <article class="post-section" id="listContent" style="display:none;">
+                        <!-- 글 목록 컨텐츠 -->
+                        글 목록 예시
+                    </article>
 
-            <article>
-                <h3>글 제목 1</h3>
-                <p>글 내용 1</p>
-            </article>
+                    <article class="post-section" id="guestbookContent" style="display:none;">
+                        <!-- 방명록 컨텐츠 -->
+                        방명록 예시
+                    </article>
+                </div>
+
+
+                <aside class="sidebar">
+                    <div class="sidebar-content">
+                        <!-- 카테고리 -->
+                        <nav class="category">
+                            <ul class="total_catagory">
+                                <li>
+                                    <a href="#">분류된 글제목 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">분류된 글제목 2</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="sidebar-content">
+                        <!-- 최근글 / 인기글 -->
+                        <div class="post-btn">
+                            <h2>
+                                <button id="recent-btn" class="tab-btn" type="button">최근 글</button>
+                                <button id="popular-btn" class="tab-btn" type="button">인기 글</button>
+                            </h2>
+                        </div>
+                        <div id="recent" class="tab-list">
+                            <ul>
+                                <li><!-- 최근 글 1 --></li>
+                                <li><!-- 최근 글 2 --></li>
+                                <li><!-- 최근 글 3 --></li>
+                                <li><!-- 최근 글 4 --></li>
+                                <li><!-- 최근 글 5 --></li>
+                            </ul>
+                        </div>
+                        <div id="popular" class="tab-list">
+                            <ul>
+                                <li><a href=""><!-- 인기 글 1 --></a></li>
+                                <li><a href=""><!-- 인기 글 2 --></a></li>
+                                <li><a href=""><!-- 인기 글 3 --></a></li>
+                                <li><a href=""><!-- 인기 글 4 --></a></li>
+                                <li><a href=""><!-- 인기 글 5 --></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </section>
-
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <!-- 카테고리 -->
-                <nav class="category">
-                    <ul class="total_catagory">
-                        <li>
-                            <a href="#">분류된 글제목 1</a>
-                        </li>
-                        <li>
-                            <a href="#">분류된 글제목 2</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="sidebar-content">
-                <!-- 최근글 / 인기글 -->
-                <div class="post-btn">
-                    <h2>
-                        <button id="recent-btn" class="tab-btn" type="button">최근 글</button>
-                        <button id="popular-btn" class="tab-btn" type="button">인기 글</button>
-                    </h2>                    
-                </div>
-                <div id="recent" class="tab-list">
-                    <ul>
-                        <li><!-- 최근 글 1 --></li>
-                        <li><!-- 최근 글 2 --></li>
-                        <li><!-- 최근 글 3 --></li>
-                        <li><!-- 최근 글 4 --></li>
-                        <li><!-- 최근 글 5 --></li>
-                    </ul>
-                </div>
-                <div id="popular" class="tab-list">
-                    <ul>
-                        <li><a href=""><!-- 인기 글 1 --></a></li>
-                        <li><a href=""><!-- 인기 글 2 --></a></li>
-                        <li><a href=""><!-- 인기 글 3 --></a></li>
-                        <li><a href=""><!-- 인기 글 4 --></a></li>
-                        <li><a href=""><!-- 인기 글 5 --></a></li>
-                    </ul>
-                </div>
-            </div>
-        </aside>
     </main>
 
-    <footer>
+
+
+
+    <footer class="footer">
         <p>&copy; 블로그 및 깃 연습용 사이드 프로젝트</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

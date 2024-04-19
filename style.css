@@ -1,0 +1,106 @@
+div,
+input,
+textarea {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Header */
+
+#header {
+    border-bottom: 1px solid #eee;
+    /* 컨텐츠 추가후 패딩으로 넣으면 지울 마진바텀 */
+    margin-bottom: 10px;
+}
+/* 블로그 이름 */
+
+#header h1 {
+    padding: 23px 0;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-weight: 800;
+    font-size: 1.75em;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+}
+
+/* 블로그 네비게이션 */
+
+.header-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 0;
+}
+
+.header-list div {
+    padding: 0 26px;
+    cursor: pointer;
+}.header-list div li {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    padding: 22px 4px 24px; 
+    font-size: 18px;
+    line-height: 20px;
+    color: #8492a6;    
+}
+
+.header-list div li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: transparent;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.header-list div li.clicked::after {
+    width: 100%;
+    background-color: black;
+}
+
+.header-list div li.clicked {
+    color: black;
+}
+
+/* Main */
+main {    
+    position: relative;
+    padding-bottom: 30px; /* footer 높이만큼 여백 추가 */        
+}
+.container {    
+    position: relative;    
+}
+
+.content-wrap {    
+    position: absolute;    
+
+}
+
+/* Footer */
+
+.footer {    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px; /* 적절한 높이 설정 */
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
