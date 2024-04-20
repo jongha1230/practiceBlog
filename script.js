@@ -22,6 +22,6 @@ function switchTab(menuId) {
     });
     var selectedSection = document.getElementById(menuId + 'Content');
     selectedSection.style.display = 'block';
-}
+};
 
 
