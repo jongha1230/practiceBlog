@@ -46,36 +46,47 @@ html, body {
     padding-left: 0;
 }
 
-.header-list div {
+.header-list > div {
     padding: 0 26px;
     cursor: pointer;
-}.header-list div li {
-    cursor: pointer;
-    position: relative;
-    display: block;
-    padding: 22px 4px 24px; 
-    font-size: 18px;
-    line-height: 20px;
-    color: #8492a6;    
 }
 
-.header-list div li::after {
+.header-list > li {
+    cursor: pointer;
+    position: relative;
+    display: inline-block; /* li를 블록 요소로 변경 */
+    padding: 1.375rem 26px 1.5rem;
+    font-size: 1.125rem; 
+    line-height: 1.25; 
+    color: #8492a6;
+}
+
+.header-list > li::after {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%; /* 가운데 정렬 */
+    transform: translateX(-50%); /* 가운데 정렬을 위한 변형 */
     width: 0;
-    height: 4px;
+    height: 0.25rem; 
     background-color: transparent;
     transition: width 0.3s ease, background-color 0.3s ease;
 }
 
-.header-list div li.clicked::after {
-    width: 100%;
+.header-list > li.clicked::after {
+    width: 60%;
     background-color: black;
 }
 
-.header-list div li.clicked {
+.header-list > li:hover {
+    color: black; 
+}
+.header-list > li:hover::after {
+    width: 60%;    
+    background-color: black;
+}
+
+.header-list > li.clicked {
     color: black;
 }
 
@@ -88,7 +99,7 @@ main {
 
 .content-wrap {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     height: 100%; /* 부모 요소에 맞추기 위해 높이를 100%로 설정 */
 }
 
@@ -96,8 +107,7 @@ main {
     display: block;
     border-right: 1px solid #eee;    
     padding: 20px;
-    height: 100%; 
-    flex-grow: 1;
+    height: 100%;     
 }
 
 .sidebar {
@@ -110,6 +120,9 @@ main {
 .btn-class {    
     display: flex;
     width: 120px;
+}
+.post-section {
+    width: 620px;
 }
 
 /* 글 쓰기 부분 */
@@ -133,23 +146,25 @@ form div {
     flex-direction: column;
     justify-content: center;
 }
-#writeForm #name,
-#writeForm #password {
+.name-password{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+    margin-top: 10px;
+}
+.name-password input {
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 230px;
+    width: 265px;
     height: 35px;
     padding: 5px;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 6px;
+    margin-right: 4px;
 }
 
-#name-password{
-    display: flex;
-    justify-content: center;
-}
 
-#title-content {    
+.title-content {    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -157,8 +172,9 @@ form div {
 }
 
 #writeForm #title,
-#writeForm #content {
-    width: 90%;
+form textarea,
+#guestbook-form #message {
+    width: 540px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;    
@@ -166,37 +182,46 @@ form div {
     margin-bottom: 10px;
 }
 
-#writeForm #content {
+#writeForm textarea {
+    margin-bottom: 10px;
     height: 300px;
 }
 
-form textarea {
-    height: 150px; /* 여러 줄 입력 필드의 높이 조정 */
+#guestbook-form #message {
+    margin-bottom: 10px;
+    height: 40px;
 }
-#submit-btn {
+
+
+
+.submit-wrap {
     display: flex;
     justify-content: center;
 }
-.write-btn {
+.submit-btn {
     background-color: #007bff;
     color: white;
     border: none;
     padding: 10px 12px;
     border-radius: 5px;
-    width: 50%;
+    width: 30%;
     cursor: pointer;
     font-size: 16px;
 }
 
-.write-btn:hover {
+.submit-btn:hover {
     background-color: #0158b4;
     transform: scale(1.2);
     transition: transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-
-
+/* 방명록 폼 */
+#guestbook-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+}
 
 /* Footer */
 
